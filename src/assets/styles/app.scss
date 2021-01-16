@@ -1,0 +1,21 @@
+// misc
+@import 'global-reset.scss';
+
+// global abstracts
+@import './abstracts/mixins';
+@import './abstracts/variables';
+@import './abstracts/containers';
+@import './abstracts/fonts';
+
+// Components
+@import './components/cursor.scss';
+@import './components/landing';
+@import './components/project-section';
+
+#app {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  background-color: whitesmoke;
+}

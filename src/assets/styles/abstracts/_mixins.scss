@@ -1,0 +1,14 @@
+@mixin FlexAlign($justifyContent, $alignItems) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin FlexContainer($justifyContent, $alignItems, $flexDirection: row, $width: 100%, $minHeight: auto) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  flex-direction: $flexDirection;
+  width: $width;
+  min-height: $minHeight;
+}

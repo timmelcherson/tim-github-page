@@ -1,0 +1,32 @@
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+
+// .app-fade-enter, .app-fade-leave-to {
+//   opacity: 0;
+// }
+
+// ..app-fade-leave, .app-fade-enter-to {
+//   opacity: 1;
+// }
+
+// .app-fade-enter-active, .app-fade-leave-active {
+//   transition: opacity .5s 'ease-out' .8s;
+// }
+
+.app-fade-enter-active {
+  animation: appFadeIn 2s;
+}
+
+@keyframes appFadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

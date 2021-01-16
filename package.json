@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "gsap": "^3.5.1",
+    "three": "^0.123.0",
     "vue": "^2.6.11",
+    "vue-inline-svg": "^2.0.0",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
@@ -22,6 +25,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.44.2"
   }
 }

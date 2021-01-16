@@ -1,0 +1,28 @@
+.app-screenshot-container {
+  position: relative;
+
+  .app-screenshot-phone {
+    width: 600px;
+    height: 600px;
+  }
+
+  .app-screenshot {
+    position: absolute;
+    height: 340px;
+    width: 245px;
+    opacity: 0;
+    transition: all 0.3s;
+
+    &.left {
+      left: 173.1px;
+      top: 122.3px;
+      transform: matrix(0.88, -0.236, 0.555, 0.96, 0, 0);
+    }
+
+    &:hover {
+      transform: matrix(0.88, -0.236, 0.555, 0.96, 0, 0) translate(5px, -8px);
+      box-shadow: -5px 8px 20px 2px rgb(203, 252, 255);
+      cursor: pointer;
+    }
+  }
+}
