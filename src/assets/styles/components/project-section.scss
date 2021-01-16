@@ -10,8 +10,8 @@
     position: absolute;
     height: 340px;
     width: 245px;
-    opacity: 0;
-    transition: all 0.3s;
+    opacity: 1;
+    transition: all .3s ease-out;
 
     &.left {
       left: 173.1px;

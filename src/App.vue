@@ -5,19 +5,15 @@
 </template>
 
 <script>
-import ProjectSection from '@/components/ProjectSection.vue';
+import ProjectSection from '@/components/projects/ProjectSection.vue';
 
 export default {
   name: 'App',
   components: {
-    ProjectSection
+    ProjectSection,
   },
-  created() {
-    
-  },
-  methods: {
-
-  }
+  created() {},
+  methods: {},
 };
 </script>
 

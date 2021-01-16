@@ -20,7 +20,7 @@
 
 <script>
 import { mapState } from 'vuex';
-import SmartphoneLeft from '@/components/projects/SmartphoneLeft.vue';
+import SmartphoneLeft from '@/components/projects/devices/SmartphoneLeft.vue';
 
 export default {
   name: 'App',

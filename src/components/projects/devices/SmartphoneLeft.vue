@@ -8,9 +8,12 @@
       @animationFinished="finished"
     />
 
-    <transition appear
-    appear-active-class="app-fade-enter-active">
-      <img :src="require(`@/assets/images/${imagePath}`)" class="app-screenshot left" />
+    <transition name="app-fade">
+      <img
+        v-if="animationComplete"
+        :src="require(`@/assets/images/${imagePath}`)"
+        class="app-screenshot left"
+      />
     </transition>
   </div>
 </template>
@@ -27,9 +30,15 @@ export default {
       default: ''
     }
   },
+  data() {
+    return {
+      animationComplete: false,
+    };
+  },
   methods: {
     finished() {
       console.log('parent received animation finished');
+      this.animationComplete = true;
     }
   }
 };
