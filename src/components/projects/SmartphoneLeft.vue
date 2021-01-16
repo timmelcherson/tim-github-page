@@ -3,7 +3,9 @@
     <SvgIcon
       class="app-screenshot-phone"
       :icon-url="'phone.svg'"
-      :stroke-anim-duration="'0.8s'"
+      :stroke-anim-duration="2000"
+      :stroke-anim-delay="500"
+      @animationFinished="finished"
     />
 
     <transition appear
@@ -23,6 +25,11 @@ export default {
     imagePath: {
       type: String,
       default: ''
+    }
+  },
+  methods: {
+    finished() {
+      console.log('parent received animation finished');
     }
   }
 };

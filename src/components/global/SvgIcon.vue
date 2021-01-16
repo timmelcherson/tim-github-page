@@ -1,13 +1,13 @@
 <template>
   <inline-svg
     :src="require(`@/assets/icons/${iconUrl}`)"
-    @loaded="loadSvgHandler(svg = $event)"
+    :class="{ 'hidden-initially': !disableAnimation }"
+    @loaded="loadSvgHandler((svg = $event))"
     @error="console.log($event)"
   />
 </template>
 
 <script>
-
 export default {
   props: {
     iconUrl: {
@@ -16,15 +16,15 @@ export default {
     },
     disableAnimation: {
       type: Boolean,
-      default: false,
+      default: false
     },
     strokeAnimDuration: {
-      type: String,
-      default: '0.5s'
+      type: Number,
+      default: 500
     },
     strokeAnimDelay: {
-      type: String,
-      default: '0s'
+      type: Number,
+      default: 0
     },
     shouldFadeFill: {
       type: Boolean,
@@ -45,7 +45,7 @@ export default {
     fillAnimationType: {
       type: String,
       default: 'linear'
-    },
+    }
     // iconUrl: {
     //   type: String,
     //   default: ''
@@ -59,11 +59,17 @@ export default {
       svg,
       strokeDuration = this.strokeAnimDuration,
       strokeDelay = this.strokeAnimDelay,
-      shouldFill = this.shouldFadeFill,
+      shouldFill = this.shouldFadeFill
     ) {
-
-      svg.children.forEach(element => {
-        this.drawSvgPath(element, strokeDuration, this.strokeAnimationType, strokeDelay);
+      svg.children.forEach(async element => {
+        console.log('drawing start');
+        await this.drawSvgPath(
+          element,
+          strokeDuration,
+          this.strokeAnimationType,
+          strokeDelay
+        );
+        this.$emit('animationFinished');
       });
 
       if (shouldFill) {
@@ -78,21 +84,28 @@ export default {
       const delay = (parseFloat(fillDuration) + parseFloat(fillDelay)) * 1000;
 
       setTimeout(() => {
-      svg.children.forEach(element => {
-        this.fadeInSvgFill(element, fillDuration, this.fillAnimationType, fillDelay);
-      });
+        svg.children.forEach(element => {
+          this.fadeInSvgFill(
+            element,
+            fillDuration,
+            this.fillAnimationType,
+            fillDelay
+          );
+        });
       }, delay);
-    },
+    }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-
 #landing-page-ff-logo {
   position: relative;
   z-index: 5;
   margin: 3px 20px 0 20px;
   height: 100%;
+}
+.hidden-initially {
+  visibility:hidden;
 }
 </style>

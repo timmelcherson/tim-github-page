@@ -33,7 +33,12 @@ Vue.mixin({
         return;
       }
 
+      let ANIM_TIME_MS = duration + delay;
+
+      console.log(`drawSvgPath with duration: ${ANIM_TIME_MS}ms`);
+
       const length = element.getTotalLength();
+      element.style.visibility = 'visible';
       element.style.transition = element.style.WebkitTransition = 'none';
       element.style.strokeDasharray = `${length} ${length}`;
       element.style.strokeDashoffset = length;
@@ -41,14 +46,20 @@ Vue.mixin({
       element.getBoundingClientRect();
 
       element.style.transition = element.style.WebkitTransition = 
-        `stroke-dashoffset ${duration} ${animationType} ${delay}`;
+        `stroke-dashoffset ${duration}ms ${animationType} ${delay}ms`;
 
-        element.style.strokeDashoffset = '0';
+      element.style.strokeDashoffset = '0';
+
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve('finished animation');
+        }, ANIM_TIME_MS);
+      });
     },
     fadeInSvgFill(svg, duration, transitionType, delay) {
       svg.style.transition = svg.style.WebkitTransition = 'none';
       svg.style.transition = `fill-opacity ${duration} ${transitionType} ${delay}`;
       svg.style.fillOpacity = 1;
-    }
+    },
   }
 });
