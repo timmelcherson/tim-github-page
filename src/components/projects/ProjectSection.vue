@@ -4,9 +4,14 @@
 
     <!-- <div class="container-split-grid"> -->
     <div class="left-section">
-      <div class="app-screenshot-container">
+      <!-- <div class="app-screenshot-container">
         <SmartphoneLeft :image-path="'orkney_folklore_trails.jpg'" />
-      </div>
+      </div> -->
+      <SvgIcon
+        :icon-url="'me.svg'"
+        :stroke-anim-duration="1000"
+        :stroke-anim-delay="500"
+      />
     </div>
 
     <div class="right-section">
@@ -20,12 +25,13 @@
 
 <script>
 import { mapState } from 'vuex';
-import SmartphoneLeft from '@/components/projects/devices/SmartphoneLeft.vue';
+// import SmartphoneLeft from '@/components/projects/devices/SmartphoneLeft.vue';
+import SvgIcon from '@/components/global/SvgIcon.vue';
 
 export default {
   name: 'App',
   components: {
-    SmartphoneLeft
+    SvgIcon,
   },
   computed: {
     ...mapState({

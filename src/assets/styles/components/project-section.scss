@@ -10,7 +10,6 @@
     position: absolute;
     height: 340px;
     width: 245px;
-    opacity: 1;
     transition: all .3s ease-out;
 
     &.left {
@@ -20,8 +19,8 @@
     }
 
     &:hover {
-      transform: matrix(0.88, -0.236, 0.555, 0.96, 0, 0) translate(5px, -8px);
-      box-shadow: -5px 8px 20px 2px rgb(203, 252, 255);
+      // transform: matrix(0.88, -0.236, 0.555, 0.96, 0, 0) translate(3px, -4px);
+      box-shadow: -3px 4px 20px 2px rgb(203, 252, 255);
       cursor: pointer;
     }
   }
