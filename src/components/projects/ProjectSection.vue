@@ -9,7 +9,7 @@
       </div> -->
       <SvgIcon
         :icon-url="'me.svg'"
-        :stroke-anim-duration="1000"
+        :stroke-anim-duration="1500"
         :stroke-anim-delay="500"
       />
     </div>
