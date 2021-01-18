@@ -45,6 +45,10 @@ export default {
     fillAnimationType: {
       type: String,
       default: 'linear'
+    },
+    dashOverlayColor: {
+      type: String,
+      default: 'none'
     }
     // iconUrl: {
     //   type: String,
@@ -59,15 +63,17 @@ export default {
       svg,
       strokeDuration = this.strokeAnimDuration,
       strokeDelay = this.strokeAnimDelay,
-      shouldFill = this.shouldFadeFill
+      shouldFill = this.shouldFadeFill,
+      dashOverlayColor = this.dashOverlayColor,
     ) {
       svg.children.forEach(async element => {
-        console.log('drawing start');
+        // console.log('drawing start');
         await this.drawSvgPath(
           element,
           strokeDuration,
           this.strokeAnimationType,
-          strokeDelay
+          strokeDelay,
+          dashOverlayColor
         );
         this.$emit('animationFinished');
       });
@@ -106,6 +112,6 @@ export default {
   height: 100%;
 }
 .hidden-initially {
-  visibility:hidden;
+  visibility: hidden;
 }
 </style>

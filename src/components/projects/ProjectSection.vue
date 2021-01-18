@@ -7,11 +7,18 @@
       <!-- <div class="app-screenshot-container">
         <SmartphoneLeft :image-path="'orkney_folklore_trails.jpg'" />
       </div> -->
+      <div class="me-img">
       <SvgIcon
+        class="svg"
         :icon-url="'me.svg'"
         :stroke-anim-duration="1500"
         :stroke-anim-delay="500"
+        :dash-overlay-color="'rgb(10, 10, 10)'"
       />
+      <img 
+        class="image"
+        :src="require(`@/assets/images/me_img.png`)" />
+      </div>
     </div>
 
     <div class="right-section">
@@ -57,6 +64,30 @@ export default {
     .right-section {
       justify-self: center;
       align-self: center;
+    }
+
+    .left-section {
+      .me-img {
+        position: relative;
+        width: 620px;
+        height: 600px;
+        
+        .svg {
+          position: absolute;
+        }
+        .image {
+          position: absolute;
+          width: 640px;
+          height: 640px;
+          right: 0;
+          bottom: 4px;
+          opacity: 0;
+          transition: opacity .5s linear;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
     }
 
     .right-section {
